@@ -1,0 +1,34 @@
+{
+  "name": "immutable-es6-map",
+  "version": "1.0.0",
+  "description": "Immutable map implemementation maximally compatible with es6 map",
+  "main": "src/map.js",
+  "scripts": {
+    "test": "mocha",
+    "docs": "jsdoc -c ./jsdoc.conf -t ./node_modules/ink-docstrap/template README.md *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softwareplumbers/immutable-es6-map.git"
+  },
+  "keywords": [
+    "es6",
+    "map",
+    "immutable"
+  ],
+  "author": "Jonathan Essex",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/softwareplumbers/immutable-es6-map/issues"
+  },
+  "homepage": "https://github.com/softwareplumbers/immutable-es6-map#readme",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "ink-docstrap": "^1.3.0",
+    "jsdoc": "^3.5.4",
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "debug": "^3.0.1"
+  }
+}
