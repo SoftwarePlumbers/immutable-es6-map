@@ -1,11 +1,11 @@
 {
   "name": "immutable-es6-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Immutable map implemementation maximally compatible with es6 map",
   "main": "src/map.js",
   "scripts": {
     "test": "mocha",
-    "docs": "jsdoc -c ./jsdoc.conf -t ./node_modules/ink-docstrap/template README.md *.js"
+    "docs": "jsdoc -c ./jsdoc.conf -d build/docs -t ./node_modules/ink-docstrap/template README.md src/*.js"
   },
   "repository": {
     "type": "git",
