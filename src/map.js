@@ -11,6 +11,24 @@ const debug = require('debug')('immutable-es6-map');
  */
 class AbstractMap {
 
+	/** Create a new ImmutableMap.
+	*
+	* Will test to see whether data is already an immutable map; in which case it will simply return data.
+	*
+	* @param data to build immutable map from
+	* @returns an immutable map.
+	*/
+	static from(data) {
+		if (ImmutableMap.isMap(data)) return data;
+		return new ImmutableMap(data);
+	}
+
+	/** Test to see whether an object is an immutable map
+	*/
+	static isMap(data) {
+		return data instanceof AbstractMap;
+	}
+
 	/** Get an iterator over map entries */
 	entries() {
 		debug('entries', this.data);
@@ -82,6 +100,14 @@ class AbstractMap {
 	[Symbol.iterator]() {
 		return this.data[Symbol.iterator]();
 	}
+
+	/** Return JSON representation
+	*
+	* May return the underlying map, in which case the result should **not** be modified.
+	*/
+	toJSON() {
+		return this.data;
+	}
 }
 
 /** Immutable Map extends AbstractMap to wrap an ES6 mutable map
@@ -99,7 +125,6 @@ class ImmutableMap extends AbstractMap {
 	constructor(data = new Map()) {
 		debug('ImmutableMap.constructor', data);
 		super();
-
 		if (data instanceof Map) 
 			this.data = data;
 		else 
@@ -141,5 +166,7 @@ class LazyMap extends AbstractMap {
 		return this._data; 
 	}
 }
+
+ImmutableMap.EMPTY = ImmutableMap.from([]);
 
 module.exports = ImmutableMap;

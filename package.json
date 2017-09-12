@@ -1,6 +1,6 @@
 {
   "name": "immutable-es6-map",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Immutable map implemementation maximally compatible with es6 map",
   "main": "src/map.js",
   "scripts": {

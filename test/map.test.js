@@ -63,4 +63,20 @@ describe('ImmutableMap', () => {
     	expect(map2._data).to.be.undefined;
     	expect(map3._data).to.be.undefined;
     });
+
+    it('JSON representation is same as regular Map', () => {
+        expect(JSON.stringify(ImmutableMap.from(TEST_DATA))).to.equal(JSON.stringify(new Map(TEST_DATA)));
+    });
+
+    it('Can build map from EMPTY object', () => {
+        expect(Array.from(
+            ImmutableMap.EMPTY
+                .set('foo','bar')
+                .set('dinkum','thinkum')
+                .set('wyoming','knot')
+                .set('dick','seaton')
+                .entries()
+            )
+        ).to.deep.equal(TEST_DATA);
+    });
 });
